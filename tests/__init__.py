@@ -5,8 +5,9 @@ import boarhat.keyboard
 
 class SecondScene(boarhat.scene.Scene):
     def build_scene(self):
+        self.layers.append(boarhat.layer.Layer("mainlayer", self))  # This is quite long and verbose to init a layer
         testimg = boarhat.image.load_resource("docs/boarhatdiagram.png", "center")
-        self.bh = pyglet.sprite.Sprite(testimg, 200, 200, batch=self.batch, group=self)
+        self.bh = boarhat.sprite.Sprite(testimg, 200, 200, parent=self.layers[0])
         self.keyboard.register_release(pyglet.window.key.SPACE, self.switch)
 
     def switch(self, key, modifiers):
@@ -17,8 +18,9 @@ class SecondScene(boarhat.scene.Scene):
 
 class MenuScene(boarhat.scene.Scene):
     def build_scene(self):
+        self.layers.append(boarhat.layer.Layer("mainlayer", self))  # This is quite long and verbose to init a layer
         testimg = boarhat.image.load_resource("docs/boarhat.png", "center")
-        self.bh = pyglet.sprite.Sprite(testimg, -200, -200, batch=self.batch, group=self)
+        self.bh = boarhat.sprite.Sprite(testimg, -200, -200, parent=self.layers[0])
         self.keyboard.register_release(pyglet.window.key.SPACE, self.switch)
 
     def switch(self, key, modifiers):
@@ -33,7 +35,7 @@ class MenuScene(boarhat.scene.Scene):
 
 class App(boarhat.window.Window):
     def __init__(self):
-        super(App, self).__init__()
+        super(App, self).__init__(centered=True)
         # # Fullscreen
         # print(self.fullscreen)
         # self.fullscreen = True

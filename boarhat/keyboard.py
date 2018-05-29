@@ -6,8 +6,8 @@ import weakref
 # We should probably be using weakrefs
 # Implement deregistering
 class Keyboard:
-    def __init__(self, window, fps=60):
-        self._window = window
+    def __init__(self, event_dispatcher, fps=60):
+        self._event_dispatcher = event_dispatcher
         self.press = {}
         self.release = {}
         self.hold = {}
@@ -15,12 +15,13 @@ class Keyboard:
         self._hold_on = False
         self._fps = fps
         self._update_interval = 1/fps
+        self._event_dispatcher.push_handlers(on_key_press=self._on_key_press, on_key_release=self._on_key_release)
 
     def _activate(self):
-        self._window.push_handlers(on_key_press=self._on_key_press, on_key_release=self._on_key_release)
+        pass
 
     def _deactivate(self):
-        self._window.remove_handlers(on_key_press=self._on_key_press, on_key_release=self._on_key_release)
+        self._event_dispatcher.remove_handlers(on_key_press=self._on_key_press, on_key_release=self._on_key_release)
 
 
     # Hand register hold a pyglet key object or list of key and a function to trigger

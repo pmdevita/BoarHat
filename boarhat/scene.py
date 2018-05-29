@@ -1,6 +1,7 @@
 import pyglet
 import boarhat.keyboard
 
+
 class SceneManager:
     def __init__(self, window):
         self.window = window
@@ -26,20 +27,18 @@ class SceneManager:
             self.active_scene._deactivate()
 
 
-
-
-
-class Scene(pyglet.graphics.Group):
+class Scene:
     """
     Subclass and build your scene under the function `build_scene()`.
     Usually also contains logic for scene-wide things like mouse control
 
     """
     def __init__(self, scenemanager):
-        super(Scene, self).__init__()
         self.scenemanager = scenemanager
-        self.batch = scenemanager.batch
-        self.keyboard = boarhat.keyboard.Keyboard(scenemanager.window)
+        self.events = boarhat.event.EventManager(scenemanager.window.event_types)
+        self.batch = pyglet.graphics.Batch()
+        self.keyboard = boarhat.keyboard.Keyboard(self.events)
+        self.layers = boarhat.layer.LayerList()
         self.build_scene()
 
     def build_scene(self):
@@ -47,11 +46,11 @@ class Scene(pyglet.graphics.Group):
 
     def _activate(self):
         """Setup when this scene becomes the active scene"""
-        self.keyboard._activate()
+        pass
 
     def _deactivate(self):
         """Teardown when this scene is no longer the active scene"""
-        self.keyboard._deactivate()
+        pass
 
     def __repr__(self):
         return self.__class__.__name__

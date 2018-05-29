@@ -33,6 +33,15 @@ Then download this repo and run setup.py
 This will be explained in the wiki. For now, check tests/__init__.py 
 to get an idea of what you can do.
 
+## Todo:
+
+Right now, we are assembling the core part of BoarHat, it's scene manager. This will determine how we organize objects 
+and display them on screen. 
+
+* Create a full prototype of the scene-layer-object paradigm
+* Discuss needs for flexibility (Do we need to be able to transplant layers and objects?)
+* Clean and unify its UI
+
 ## Other Information
 
 Named "BoarHat" because it sits on top of pyglet (like a hat!) and 
