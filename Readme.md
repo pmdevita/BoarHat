@@ -2,27 +2,28 @@
 
 ![alt text](https://github.com/pmdevita/BoarHat/raw/master/docs/boarhatdiagram.png "An analogy for BoarHat's design")
 
-BoarHat is a companion library for pyglet that provides implementations of commonly 
-used objects. It supports pyglet 1.3 and Python 3.
+BoarHat is a companion library for [pyglet](https://github.com/pyglet/pyglet) that provides implementations of commonly 
+used objects. It supports pyglet 1.3+ and Python 3+.
+
+BoarHat itself is not a full game/graphics engine. Rather, it gives you structures to help manage your pyglet 
+application and utilities to make common tasks easier.
 
 BoarHat ~~can~~ will do
 
 * Scene and layer management
 * Layer translations that are useful for sidescrollers and overworlds
-* Import and use [Tiled](https://www.mapeditor.org/) tile maps
-* Efficiently manage keyboard input
-* Provide utilities like automatic anchor placement on images
+* Support [Tiled](https://www.mapeditor.org/) tile maps
+* Provide utilities like automatic anchor placement on images, a better keyboard input manager
 
 and more!
 
-BoarHat is in very early development. Check back before the next 
-PyWeek (as we are writing it for that).
+BoarHat is in very early development. It's being written for PyWeek (provided I'll actually have time to participate).
 
 ## Setup/Installation
 
 Make sure you have pyglet
 
-    pip install pyglet==1.3.2
+    pip install pyglet
     
 Then download this repo and run setup.py
 
@@ -33,14 +34,14 @@ Then download this repo and run setup.py
 This will be explained in the wiki. For now, check tests/__init__.py 
 to get an idea of what you can do.
 
-## Todo:
+## To Do
 
 Right now, we are assembling the core part of BoarHat, it's scene manager. This will determine how we organize objects 
 and display them on screen. 
 
-* Create a full prototype of the scene-layer-object paradigm
-* Discuss needs for flexibility (Do we need to be able to transplant layers and objects?)
-* Clean and unify its UI
+* Create a full prototype showcasing all of the abilities of Scenes, Layers, and Objects
+* Discuss needs for flexibility (Do we need to be able to transplant layers and objects after creation?)
+* Clean and unify its API
 
 ## Other Information
 

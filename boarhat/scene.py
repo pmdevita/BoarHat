@@ -5,7 +5,7 @@ import boarhat.keyboard
 class SceneManager:
     def __init__(self, window):
         self.window = window
-        self.batch = window.batch
+        # self.batch = window.batch
         self.scene_stack = []
         self.active_scene = None
 
@@ -38,7 +38,7 @@ class Scene:
         self.events = boarhat.event.EventManager(scenemanager.window.event_types)
         self.batch = pyglet.graphics.Batch()
         self.keyboard = boarhat.keyboard.Keyboard(self.events)
-        self.layers = boarhat.layer.LayerList()
+        self.layers = boarhat.layer.LayerManager()
         self.build_scene()
 
     def build_scene(self):

@@ -1,6 +1,7 @@
 import pyglet
 import boarhat
 
+
 class Layer(pyglet.graphics.Group):
     def __init__(self, name, parent):   # Does this really need a name?
         """
@@ -27,17 +28,18 @@ class Layer(pyglet.graphics.Group):
     def __repr__(self):
         return self.name
 
-class LayerList(list):
+
+class LayerManager(list):
     def __init__(self):
-        super(LayerList, self).__init__()
+        super(LayerManager, self).__init__()
         self._dict = {}
 
     def append(self, lr: Layer):
-        super(LayerList, self).append(lr)
+        super(LayerManager, self).append(lr)
         lr._set_order(len(self) - 1)
 
     def insert(self, index, lr: Layer):
-        super(LayerList, self).insert(index, lr)
+        super(LayerManager, self).insert(index, lr)
         for i, layer in enumerate(self[index:]):
             layer._set_order(index + i)
 
@@ -45,7 +47,7 @@ class LayerList(list):
         if isinstance(item, str):
             return self._dict[str]
         else:
-            return super(LayerList, self).__getitem__(item)
+            return super(LayerManager, self).__getitem__(item)
 
     # def __setitem__(self, key, value):
     #     if isinstance(key, str):

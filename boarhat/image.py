@@ -7,12 +7,16 @@ def _anchor(img, anchor):
         return (img.width, 0)
     elif anchor == "topleft":
         return (0, img.height)
+    elif anchor == "bottomleft":
+        return (0, 0)
+
 
 def load(filename, anchor=None):
     img = pyglet.image.load(filename)
     if anchor:
         img.anchor_x, img.anchor_y = _anchor(img, anchor)
     return img
+
 
 def load_resource(filename, anchor=None):
     img = pyglet.resource.image(filename)
