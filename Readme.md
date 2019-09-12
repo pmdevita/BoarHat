@@ -31,7 +31,7 @@ Then download this repo and run setup.py
     
 ## Usage
 
-This will be explained in the wiki. For now, check tests/__init__.py 
+This will be explained in the wiki. For now, check `tests/__init__.py`
 to get an idea of what you can do.
 
 ## To Do
