@@ -49,13 +49,19 @@ class MenuScene(boarhat.scene.Scene):
         self.bh.x = self.x
 
 
-
 class App(boarhat.window.Window):
     def __init__(self):
         super(App, self).__init__(centered=True)
         self.scenemanager.create(MenuScene)
         self.scenemanager.create(SecondScene)
         self.scenemanager.next_scene()
+
+        # Global keyboard stuff
+        # Fullscreen
+        self.keyboard.register_release(Keys.F11, self.go_fullscreen)
+
+    def go_fullscreen(self, key, modifier):
+        self.fullscreen = not self.fullscreen
 
 
 if __name__ == '__main__':

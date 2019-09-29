@@ -35,6 +35,7 @@ class Scene:
     """
     def __init__(self, scenemanager):
         self.scenemanager = scenemanager
+        self.window = scenemanager.window
         self.events = boarhat.event.EventManager(scenemanager.window.event_types)
         self.batch = pyglet.graphics.Batch()
         self.keyboard = boarhat.keyboard.Keyboard(self.events)

@@ -25,8 +25,8 @@ class Keyboard:
     def _deactivate(self):
         self._event_dispatcher.remove_handlers(on_key_press=self._on_key_press, on_key_release=self._on_key_release)
 
-
     # Hand register hold a pyglet key object or list of key and a function to trigger
+
     def register_hold(self, key, trigger):
         if isinstance(key, collections.Iterable):
             for i in key:

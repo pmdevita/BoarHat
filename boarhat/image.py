@@ -1,5 +1,6 @@
 import pyglet
 
+
 def _anchor(img, anchor):
     if anchor == "center":
         return (round(img.width / 2), round(img.height / 2))

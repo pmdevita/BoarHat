@@ -36,12 +36,9 @@ to get an idea of what you can do.
 
 ## To Do
 
-Right now, we are assembling the core part of BoarHat, it's scene manager. This will determine how we organize objects 
-and display them on screen. 
-
-* Create a full prototype showcasing all of the abilities of Scenes, Layers, and Objects
-* Discuss needs for flexibility (Do we need to be able to transplant layers and objects after creation?)
-* Clean and unify its API
+Right now, I'm implementing basic functionality for scenes and layers. We'll then be creating several test projects 
+to experiment with how this scene-layer-object abstraction works, determine it's pros and cons, and figure out what 
+needs to be adjusted to make the experience better.
 
 ## Other Information
 

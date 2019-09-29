@@ -6,6 +6,7 @@ BoarHat's EventManager manages all events for a scene. It only passes events thr
 active. 
 """
 
+
 class EventManager(pyglet.event.EventDispatcher):
     def __init__(self, event_types):
         self._event_stack = ()

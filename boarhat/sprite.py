@@ -15,4 +15,8 @@ class Sprite(pyglet.sprite.Sprite):
             group = None
         else:   # If not, then we need to get the batch for other objects to use
             group = parent
+        self.parent = parent
         super(Sprite, self).__init__(img, x, y, blend_src, blend_dest, parent.batch, group, usage, subpixel)
+
+
+
